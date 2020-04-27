@@ -6,3 +6,11 @@ if (navigator.serviceWorker) {
       console.log('SW registered');
     });
 }
+
+fetch('camera_feed.html')
+  .then(res => {
+    return res.text();
+  })
+  .then(html => {
+    document.getElementById('camid').innerHTML = html;
+  })
